@@ -1,0 +1,19 @@
+org: nishitbaria
+app: lamda
+service: codedamn-test
+frameworkVersion: "3"
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  greetUser:
+    handler: handler.greetUser
+    events:
+      - http:
+          path: /greet
+          method: get
